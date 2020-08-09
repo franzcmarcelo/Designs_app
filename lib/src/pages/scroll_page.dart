@@ -9,7 +9,7 @@ class ScrollPage extends StatelessWidget {
         scrollDirection: Axis.vertical,
         children: [
           _page1(),
-          _page2(),
+          _page2(context),
         ],
       )
     );
@@ -63,7 +63,7 @@ class ScrollPage extends StatelessWidget {
   }
 
 
-  Widget _page2() {
+  Widget _page2( BuildContext context) {
     return Container(
       width: double.infinity,
       height: double.infinity,
@@ -75,9 +75,11 @@ class ScrollPage extends StatelessWidget {
           textColor: Colors.white,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
-            child: Text('Bienvenido', style: TextStyle(fontSize: 20.0),),
+            child: Text('Go to Home', style: TextStyle(fontSize: 20.0),),
           ),
-          onPressed: (){},
+          onPressed: (){
+            Navigator.pushNamed(context, 'home');
+          },
         ),
       ),
     );
